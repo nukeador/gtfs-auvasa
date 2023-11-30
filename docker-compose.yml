@@ -1,14 +1,12 @@
-
-version: '3'
+version: "3.9"
 services:
-  app:
+  gtfsauvasa:
     build: .
     container_name: gtfsauvasa
     image: gtfsauvasa:latest
     ports:
-      - "3333:3333"
-    volumes:
-      - .:/usr/src/app
+      - 5000:3333
     restart: unless-stopped
     environment:
-      NODE_ENV: production
+      - NODE_ENV=production
+      - PORT=3333
