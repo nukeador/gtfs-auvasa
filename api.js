@@ -2,8 +2,12 @@ const express = require('express');
 const { readFile } = require('fs').promises;
 const path = require('path');
 const { openDb, mostrarTiempoProgramado, mostrarTiemposDeLlegadaParaParada, mostrarLineas, mostrarParadas, actualizarDatos } = require('./index.js');
+const cors = require('cors');
 
 const app = express();
+
+// Permitir todas las peticiones CORS
+app.use(cors({ origin: '*' }));
 
 (async () => {
     // Abre la conexión a la base de datos cuando la aplicación se inicia
