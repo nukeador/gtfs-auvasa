@@ -7,6 +7,9 @@ COPY ./ /usr/src/app/
 # Instalar dependencias
 RUN npm install
 
+# Descargar estáticos
+gtfs-export
+
 # Exponer el puerto en el que se ejecutará la aplicación
 EXPOSE 3333
 
