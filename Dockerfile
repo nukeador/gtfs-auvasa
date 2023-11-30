@@ -8,8 +8,8 @@ COPY ./ /usr/src/app/
 RUN npm install
 
 # Descargar estáticos y reempazar el agency.txt por el que tiene URL
-gtfs-export
-cp agency.txt gtfs-export/auvasa/agency.txt
+RUN gtfs-export
+COPY agency.txt gtfs-export/auvasa/agency.txt
 
 # Exponer el puerto en el que se ejecutará la aplicación
 EXPOSE 3333
