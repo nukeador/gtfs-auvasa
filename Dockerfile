@@ -11,7 +11,6 @@ RUN npm install
 RUN npm install gtfs -g
 RUN gtfs-import
 RUN gtfs-export
-COPY agency.txt gtfs-export/auvasa/agency.txt
 
 # Exponer el puerto en el que se ejecutará la aplicación
 EXPOSE 3333
