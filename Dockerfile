@@ -7,5 +7,9 @@ COPY ./ /usr/src/app/
 # Instalar dependencias
 RUN npm install
 
-# Iniciar Cron, generar lista de carreras y ejecutar el scrapper
+# Iniciar datos GTFS
+RUN npm install gtfs -g
+RUN gtfs-import
+
+# Inicia app
 CMD ["node", "api.js"]
