@@ -8,6 +8,7 @@ COPY ./ /usr/src/app/
 RUN npm install
 
 # Descargar estáticos y reempazar el agency.txt por el que tiene URL
+RUN npm install gtfs -g
 RUN gtfs-export
 COPY agency.txt gtfs-export/auvasa/agency.txt
 
