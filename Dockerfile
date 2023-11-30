@@ -4,6 +4,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 WORKDIR /usr/src/app
 COPY ./ /usr/src/app/
 
+ENV NODE_PATH=/usr/local/lib/node_modules
+
 # Instalar dependencias
 RUN npm install
 
