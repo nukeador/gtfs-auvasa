@@ -7,8 +7,9 @@ COPY ./ /usr/src/app/
 # Instalar dependencias
 RUN npm install
 
-# Descargar estáticos
+# Descargar estáticos y reempazar el agency.txt por el que tiene URL
 gtfs-export
+cp agency.txt gtfs-export/auvasa/agency.txt
 
 # Exponer el puerto en el que se ejecutará la aplicación
 EXPOSE 3333
