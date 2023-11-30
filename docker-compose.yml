@@ -5,7 +5,7 @@ services:
     container_name: gtfsauvasa
     image: gtfsauvasa:latest
     ports:
-      - 5000:3333
+      - 3333:3333
     restart: unless-stopped
     environment:
       - NODE_ENV=production
