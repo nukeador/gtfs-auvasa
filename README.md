@@ -1,3 +1,16 @@
+# Ejecución local
+
+``````
+npm install
+node api.js
+```
+
+# Ejecución con Docker
+
+```
+docker compose up -d
+```
+
 # API Endpoints
 
 La aplicación proporciona los siguientes endpoints para interactuar con los datos:

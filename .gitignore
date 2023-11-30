@@ -1,0 +1,4 @@
+gtfs-export/
+node_modules/
+api.dev.js
+database.sqlite
