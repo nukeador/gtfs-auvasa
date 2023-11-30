@@ -1,21 +1,26 @@
-# Ejecución local
 
-``````
+## gtfs-auvasa
+
+Este proyecto consume los [datos abiertos de AUVASA](http://auvasa.es/auv_opendata.asp) en formato GTFS y genera una app web que sirve la información como API.
+
+## Ejecución local
+
+```
 npm install
 node api.js
 ```
 
-# Ejecución con Docker
+## Ejecución con Docker
 
 ```
 docker compose up -d
 ```
 
-# API Endpoints
+## API Endpoints
 
 La aplicación proporciona los siguientes endpoints para interactuar con los datos:
 
-## Obtener Tiempo Programado para una Parada y Línea Específica
+### Obtener Tiempo Programado para una Parada y Línea Específica
 
 - **URL**: `/parada/:parada/:linea`
 - **Método**: `GET`
@@ -24,7 +29,7 @@ La aplicación proporciona los siguientes endpoints para interactuar con los dat
   - `linea`: ID de la línea
 - **Descripción**: Devuelve el tiempo programado para una parada y línea específica.
 
-## Obtener Tiempo Programado para una Parada
+### Obtener Tiempo Programado para una Parada
 
 - **URL**: `/parada/:parada`
 - **Método**: `GET`
@@ -32,13 +37,13 @@ La aplicación proporciona los siguientes endpoints para interactuar con los dat
   - `parada`: ID de la parada
 - **Descripción**: Devuelve el tiempo programado para una parada específica.
 
-## Listar Todas las Paradas
+### Listar Todas las Paradas
 
 - **URL**: `/paradas`
 - **Método**: `GET`
 - **Descripción**: Devuelve una lista de todas las paradas.
 
-## Obtener Tiempos de Llegada en Tiempo Real para una Parada
+### Obtener Tiempos de Llegada en Tiempo Real para una Parada
 
 - **URL**: `/realtime/:parada`
 - **Método**: `GET`
@@ -46,13 +51,13 @@ La aplicación proporciona los siguientes endpoints para interactuar con los dat
   - `parada`: ID de la parada
 - **Descripción**: Devuelve los tiempos de llegada en tiempo real para una parada específica.
 
-## Listar Todas las Líneas
+### Listar Todas las Líneas
 
 - **URL**: `/lineas`
 - **Método**: `GET`
 - **Descripción**: Devuelve una lista de todas las líneas de transporte.
 
-## Actualizar Datos
+### Actualizar Datos
 
 - **URL**: `/actualizardatos`
 - **Método**: `GET`
