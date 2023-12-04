@@ -200,7 +200,7 @@ async function mostrarTiempoProgramado(stopCode, routeShortName) {
         .map(stoptime => ({ llegada: stoptime.departure_time, trip_id: stoptime.trip_id }));
       if (!buses[routeShortName]) {
         buses[routeShortName] = {
-          destino: routeInfo[0].route_long_name,
+          destino: tripInfo[0].trip_headsign,
           linea: routeShortName,
           horarios: [],
         };
