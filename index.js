@@ -245,8 +245,17 @@ async function mostrarTiempoProgramado(stopCode, routeShortName) {
 
 const NodeCache = require('node-cache');
 const myCache = new NodeCache({ stdTTL: 600 }); // Caché con un TTL de 60 segundos
+let actualizando = false; // Variable de control
 
 async function actualizarDatos() {
+
+  if (actualizando) {
+    console.log("Actualización ya en curso, omitiendo esta ejecución.");
+    return;
+  }
+
+  actualizando = true; // Establecer el flag antes de iniciar la actualización
+
   try{
     await gtfs.updateGtfsRealtime(config);
 
@@ -273,6 +282,8 @@ async function actualizarDatos() {
     console.error('Error al actualizar datos GTFS Realtime:', error);
 
     return 'Error al actualizar los datos: '+ error;
+  } finally {
+    actualizando = false; // Restablecer el flag después de completar la actualización
   }
 }
 

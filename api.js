@@ -72,5 +72,5 @@ app.use(cors({ origin: '*' }));
         actualizarDatos()
         .then(resultado => console.log('Datos actualizados:', resultado))
         .catch(error => console.error('Error al actualizar datos:', error));
-    }, 15000); 
+    }, 30000); 
 })();
