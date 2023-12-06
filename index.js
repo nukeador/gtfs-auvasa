@@ -1,7 +1,4 @@
 let gtfs;
-import('gtfs').then(module => {
-  gtfs = module;
-});
 
 let getStoptimes;
 let getStoptimesUpdates;
@@ -9,6 +6,7 @@ let getRoutes;
 let getStops;
 
 import('gtfs').then(module => {
+  gtfs = module;
   getStoptimes = module.getStoptimes;
   getStoptimesUpdates = module.getStopTimesUpdates;
   getRoutes = module.getRoutes;
@@ -121,15 +119,15 @@ async function mostrarTiemposDeLlegadaParaParada(stopCode) {
       const ahora = moment().tz("Europe/Madrid");
       const tiempoRestante = Math.round((llegada - ahora) / 60000);
 
-      // Solo mostrar los tiempos de llegada que sean en el futuro
-      if (tiempoRestante >= 0) {
+      // Mostramos todos los tiempos, incluso los pasados para poder identificar los que llegaron
+      // Con adelanto o retraso
       salida.buses.push({
         trip_id: time.trip_id,
         linea: routeName,
         llegada: llegada.format('HH:mm:ss'), // Formatear la hora en formato 24H
         tiempoRestante: tiempoRestante
       });
-      }
+
     });
   }
 
